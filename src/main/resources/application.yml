@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: telecom-billing
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/billing}
+    username: ${DB_USER:billing}
+    password: ${DB_PASSWORD:billing}
+  batch:
+    job:
+      enabled: false          # jobs are launched through the API
+    jdbc:
+      initialize-schema: always
+
+billing:
+  chunk-size: 500
